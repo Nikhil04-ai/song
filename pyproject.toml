@@ -2,6 +2,8 @@
 name = "repl-nix-workspace"
 version = "0.1.0"
 description = "Temporary fix for Render deployment"
+authors = ["Nikhil"]
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">=3.11"
@@ -13,6 +15,10 @@ nltk = ">=3.9.1"
 psycopg2-binary = ">=2.9.10"
 trafilatura = ">=2.0.0"
 watchdog = ">=6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "repl-nix-workspace"
