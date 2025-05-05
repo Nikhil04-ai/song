@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists - LyricVerse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='assets/logo.svg') }}" alt="LyricVerse Logo">
+                <h1>LyricVerse</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/trending">Trending</a></li>
+                <li><a href="/artists">Artists</a></li>
+                <li><a href="/team">Team</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Artists Section -->
+    <section class="container artists-section">
+        <div class="glass-card">
+            <h2>Artists</h2>
+            <p>Explore our collection of artists and their songs. Click on a song to view its lyrics.</p>
+            
+            <div class="artist-grid">
+                {% if artists %}
+                    {% for artist in artists %}
+                        <div class="glass-card artist-card">
+                            <div class="artist-image">
+                                <i class="fas fa-microphone-alt" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <h3 class="artist-name">{{ artist.name }}</h3>
+                            <p class="song-count">{{ artist.song_count }} song{% if artist.song_count != 1 %}s{% endif %}</p>
+                            
+                            <div class="songs-list">
+                                {% for song in artist.songs %}
+                                    <a href="#" data-filename="{{ song.filename }}">{{ song.title }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div style="text-align: center; grid-column: 1 / -1; padding: 3rem;">
+                        <i class="fas fa-users" style="font-size: 3rem; opacity: 0.3; margin-bottom: 1rem;"></i>
+                        <p>No artists available at the moment.</p>
+                        <p>Please check back later or add some lyrics files to the library.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lyrics Modal -->
+    <div class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Song Title</h2>
+            <h3 class="modal-artist">Artist Name</h3>
+            <div class="lyrics-content">
+                <!-- Lyrics will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='assets/logo.svg') }}" alt="LyricVerse Logo" style="height: 40px;">
+                <h1 style="font-size: 1.2rem;">LyricVerse</h1>
+            </div>
+            <p>Your destination for music lyrics and emotional analysis.</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/search">Search</a>
+                <a href="/trending">Trending</a>
+                <a href="/artists">Artists</a>
+                <a href="/team">Team</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2025 LyricVerse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lyrics.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Find the Perfect Lyrics</h1>
+    <p>Discover lyrics from your favorite songs and explore music that matches your emotions.</p>
+    <form class="search-bar search-form" action="{{ url_for('search') }}" method="GET">
+        <input type="text" name="q" placeholder="Search for lyrics or artists...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+    <div class="animation-wave"></div>
+</section>
+
+<!-- Features Section -->
+<section class="container">
+    <div class="glass-card">
+        <h2>Explore Our Features</h2>
+        <p>Discover what makes LyricVerse the perfect place to explore music lyrics.</p>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3><i class="fas fa-search"></i> Powerful Search</h3>
+                <p>Find lyrics by song title, artist name, or specific words in the lyrics.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="fas fa-brain"></i> Emotion Analysis</h3>
+                <p>Our AI analyzes lyrics to suggest songs with similar emotional themes.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="fas fa-chart-line"></i> Trending Songs</h3>
+                <p>Stay updated with the most popular songs and lyrics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Guitar -->
+<section class="container">
+    <div class="glass-card">
+        <h2>Play the Guitar</h2>
+        <p>Click on the strings to play "sa re ga ma pa dha ni sa" notes</p>
+        
+        <div class="guitar-container">
+            <div class="guitar">
+                <div class="frets">
+                    <div class="fret"></div>
+                    <div class="fret"></div>
+                    <div class="fret"></div>
+                    <div class="fret"></div>
+                    <div class="fret"></div>
+                </div>
+                <div class="guitar-strings">
+                    <div class="guitar-string" data-note="sa" data-frequency="240">
+                        <span class="string-label">Sa</span>
+                    </div>
+                    <div class="guitar-string" data-note="re" data-frequency="270">
+                        <span class="string-label">Re</span>
+                    </div>
+                    <div class="guitar-string" data-note="ga" data-frequency="300">
+                        <span class="string-label">Ga</span>
+                    </div>
+                    <div class="guitar-string" data-note="ma" data-frequency="320">
+                        <span class="string-label">Ma</span>
+                    </div>
+                    <div class="guitar-string" data-note="pa" data-frequency="360">
+                        <span class="string-label">Pa</span>
+                    </div>
+                    <div class="guitar-string" data-note="dha" data-frequency="400">
+                        <span class="string-label">Dha</span>
+                    </div>
+                    <div class="guitar-string" data-note="ni" data-frequency="450">
+                        <span class="string-label">Ni</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Links -->
+<section class="container">
+    <div class="glass-card">
+        <h2>Quick Navigation</h2>
+        
+        <div class="quick-links">
+            <a href="{{ url_for('search') }}" class="quick-link-card">
+                <i class="fas fa-search"></i>
+                <h3>Search Lyrics</h3>
+                <p>Find lyrics from your favorite songs</p>
+            </a>
+            
+            <a href="{{ url_for('trending') }}" class="quick-link-card">
+                <i class="fas fa-fire"></i>
+                <h3>Trending Songs</h3>
+                <p>Discover what's hot right now</p>
+            </a>
+            
+            <a href="{{ url_for('artists') }}" class="quick-link-card">
+                <i class="fas fa-microphone"></i>
+                <h3>Artists</h3>
+                <p>Browse artists and their songs</p>
+            </a>
+            
+            <a href="{{ url_for('team') }}" class="quick-link-card">
+                <i class="fas fa-users"></i>
+                <h3>Our Team</h3>
+                <p>Meet the people behind LyricVerse</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8a2be2" />
+      <stop offset="100%" stop-color="#ff4500" />
+    </linearGradient>
+  </defs>
+  <g fill="url(#logoGradient)">
+    <!-- Music note -->
+    <path d="M40,20 L65,15 L65,50 C65,55.5228 60.5228,60 55,60 C49.4772,60 45,55.5228 45,50 C45,44.4772 49.4772,40 55,40 C56.7,40 58.3,40.4 59.7,41.1 L60,41.3 L60,25 L45,28 L45,65 C45,70.5228 40.5228,75 35,75 C29.4772,75 25,70.5228 25,65 C25,59.4772 29.4772,55 35,55 C36.7,55 38.3,55.4 39.7,56.1 L40,56.3 L40,20 Z" fill-rule="evenodd" />
+    
+    <!-- Circular waves -->
+    <path d="M75,35 C83.2843,35 90,41.7157 90,50 C90,58.2843 83.2843,65 75,65" stroke="url(#logoGradient)" stroke-width="3" fill="none" stroke-linecap="round" />
+    <path d="M80,25 C92.1503,25 102,34.8497 102,47 C102,59.1503 92.1503,69 80,69" stroke="url(#logoGradient)" stroke-width="2" fill="none" stroke-linecap="round" transform="translate(-5, 3)" />
+  </g>
+</svg>
